@@ -4,6 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.facebook.AccessToken;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+
+import org.json.JSONObject;
+
 /******************************************************************************
  * Activity created/ called from a successful FB Login
  *****************************************************************************/
@@ -36,6 +42,25 @@ public class SuccessfulLoginActivity extends Activity {
          * - You can use the ProfileTracker class to track changes in the
          *   current profile
          *********************************************************************/
+
+        /**********************************************************************
+         * The following code below demonstrates how you can pull a JSONObject
+         * from Facebook. In the following code, I ask for a request to pull
+         * my own user information (newMeRequest), and ask for the fields: id,
+         * first_name, last_name, etc. I then output the message into the
+         * the Log.
+         *********************************************************************/
+        GraphRequest request = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(),
+                new GraphRequest.GraphJSONObjectCallback() {
+                    @Override
+                    public void onCompleted(JSONObject object, GraphResponse response) {
+                        Log.e(TAG, "user_me request = " + object.toString());
+                    }
+                });
+        Bundle parameters = new Bundle();
+        parameters.putString("fields", "id, first_name, last_name, name, gender, link, birthday, picture");
+        request.setParameters(parameters);
+        request.executeAsync();
 
     }
 }
