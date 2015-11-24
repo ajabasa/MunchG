@@ -38,6 +38,14 @@
             android:label="@string/app_name">
         </activity>
 
+        <activity android:name=".SuccessfulLoginActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity android:name=".PostActivity"
+            android:label="@string/app_name">
+        </activity>
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"/>

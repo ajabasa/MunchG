@@ -48,6 +48,8 @@ public class CrimeFragment extends Fragment {
         mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
     }
 
+
+
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         View v = inflater.inflate( R.layout.fragment_crime, parent, false);
@@ -71,6 +73,8 @@ public class CrimeFragment extends Fragment {
                 //blank
             }
         });
+
+
 
         // create reference to new button
         mDateButton = (Button)v.findViewById(R.id.crime_date);

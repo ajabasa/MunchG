@@ -2,13 +2,6 @@ package cse190.facebooklogin;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
-
-import com.facebook.AccessToken;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-
-import org.json.JSONObject;
 
 /******************************************************************************
  * Activity created/ called from a successful FB Login
@@ -29,10 +22,20 @@ public class SuccessfulLoginActivity extends Activity {
          *
          * See note on onSuccess on using the current Access Token
         **********************************************************************/
-        Bundle extras = getIntent().getExtras();
+
+
+
+
+
+
+        //COMMENTED THIS OUT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+        /*Bundle extras = getIntent().getExtras();
         Log.e(TAG, "User ID = " + extras.get("UserID"));
         extras = getIntent().getExtras();
-        Log.e(TAG, "Token ID = " + extras.get("TokenID"));
+        Log.e(TAG, "Token ID = " + extras.get("TokenID"));*/
 
         /**********************************************************************
          * Some Useful Methods/ Information:
@@ -50,6 +53,8 @@ public class SuccessfulLoginActivity extends Activity {
          * first_name, last_name, etc. I then output the message into the
          * the Log.
          *********************************************************************/
+        /*
+
         GraphRequest request = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(),
                 new GraphRequest.GraphJSONObjectCallback() {
                     @Override
@@ -62,5 +67,6 @@ public class SuccessfulLoginActivity extends Activity {
         request.setParameters(parameters);
         request.executeAsync();
 
+        */
     }
 }
