@@ -149,7 +149,7 @@ public class LoginActivity extends AppCompatActivity
                  * AccessTokens.getCurrentAccessToken().getTokenID()
                  *************************************************************/
                 Intent intent = new Intent(getApplicationContext(),
-                        SuccessfulLoginActivity.class);
+                        CrimeListActivity.class);
                 intent.putExtra("UserID", userID);
                 intent.putExtra("TokenID", tokenID);
                 startActivity(intent);
