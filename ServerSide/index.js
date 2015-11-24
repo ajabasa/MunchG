@@ -1,0 +1,78 @@
+var mongodb = require('mongodb');
+
+var MongoClient = mongodb.MongoClient;
+
+var url = 'mongodb://localhost:27017/testdb';
+
+MongoClient.connect(url, function(err, db) {
+  if(err) {
+    console.log('Unable to connect to the mongodb server. Error:', err);
+  } else {
+    console.log('Connection established to', url);
+
+    var jsonObj = require("./testMunch.json");
+
+    console.log(jsonObj);
+
+    var collection = db.collection('munchPosts');
+
+    collection.insert(jsonObj, function(err, result) {
+      var errCheck = false;
+      if(err) {
+        console.log(err);
+      } else {
+        if(!jsonObj.hasOwnProperty('location')){
+          console.log("Requires a location");
+          errCheck = true;
+        }
+        if((jsonObj.location == "") || (jsonObj.location == " ")) {
+          console.log("Requires a location");
+          errCheck = true;
+        }
+        if(errCheck == false) {
+          console.log("Inserted successfully"); 
+        }
+      }
+      db.close();
+    });
+
+/*    var collection = db.collection('users');
+
+    var user1 = {name: 'modulus admin', age: 42, roles: ['admin', 'moderator', 'user']};
+    var user2 = {name: 'modulus user', age: 22, roles: ['user']};
+    var user3 = {name: 'modulus super admin', age: 92, roles: ['super-admin', 'admin', 'moderator', 'user']};
+
+    collection.insert([user1, user2, user3], function (err, result) {
+      if(err) {
+        console.log(err);
+      } else {
+        console.log('Inserted %d documents into the "users" connection. The documents inserted with "_id" are:', result.length, result);
+      }
+      //db.close();
+    });
+    
+    collection.update({name: 'modulus user'}, {$set: {enabled: false}}, function(err, numUpdated) {
+      if(err) {
+        console.log(err);
+      } else if (numUpdated) {
+        console.log('Updated Successfully %d document(s)', numUpdated);        
+      } else {
+        console.log("No document found with defined find criteria");
+      }
+     // db.close();
+    });
+
+    collection.find({name: 'modulus user'}).toArray(function(err, result) {
+      if(err) {
+        console.log(err);
+      } else if (result.length) {
+        console.log('Found:', result);
+      } else {
+        console.log('No document(s) found with defined "find" criteria!');
+      }
+      //db.close();
+    });
+
+    //db.close();//*/
+  }
+});
