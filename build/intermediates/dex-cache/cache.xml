@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/andrewjabasa/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.2.0/6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd/bolts-android-1.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
+        <dex dex="/Users/andrewjabasa/AndroidStudioProjects/CSE190_FacebookLogin/app/build/intermediates/pre-dexed/debug/bolts-android-1.2.0-62b9c672d146f1bbc89bf8381dfcfc4d97027ab6.jar" />
+    </item>
+    <item
+        jar="/Users/andrewjabasa/AndroidStudioProjects/CSE190_FacebookLogin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/andrewjabasa/AndroidStudioProjects/CSE190_FacebookLogin/app/build/intermediates/pre-dexed/debug/classes-f823b54be78b67a729c1ae1a65dc7a95b217eca7.jar" />
+    </item>
+    <item
+        jar="/Users/andrewjabasa/AndroidStudioProjects/CSE190_FacebookLogin/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1c1afa0ab2a8197a5da1b36c4167a9e479cb74d9">
+        <dex dex="/Users/andrewjabasa/AndroidStudioProjects/CSE190_FacebookLogin/app/build/intermediates/pre-dexed/debug/classes-7264c8b44d921623b5d5673df1504473fc2082f3.jar" />
+    </item>
+    <item
+        jar="/Users/andrewjabasa/AndroidStudioProjects/CSE190_FacebookLogin/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/andrewjabasa/AndroidStudioProjects/CSE190_FacebookLogin/app/build/intermediates/pre-dexed/debug/classes-5c735329ec78b2ecaabe91281a4c5a089ced0e15.jar" />
+    </item>
+    <item
+        jar="/Users/andrewjabasa/AndroidStudioProjects/CSE190_FacebookLogin/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/andrewjabasa/AndroidStudioProjects/CSE190_FacebookLogin/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-8d9967f5ac20e59ea6a223ce1916024466f2a4f3.jar" />
+    </item>
+    <item
+        jar="/Users/andrewjabasa/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/andrewjabasa/AndroidStudioProjects/CSE190_FacebookLogin/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-87ac64de20c8b966f092f2cd1d3b8e7575b2eba0.jar" />
+    </item>
+    <item
+        jar="/Users/andrewjabasa/AndroidStudioProjects/CSE190_FacebookLogin/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/Users/andrewjabasa/AndroidStudioProjects/CSE190_FacebookLogin/app/build/intermediates/pre-dexed/debug/classes-146ddd480ce6ff894446a05d15bf5bdec0093e15.jar" />
+    </item>
+
+</items>
