@@ -7,10 +7,8 @@ import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
-import android.content.pm.PackageInfo;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.pm.Signature;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -21,7 +19,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Base64;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -33,6 +30,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -40,8 +38,6 @@ import com.facebook.FacebookSdk;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,29 +80,16 @@ public class LoginActivity extends AppCompatActivity
     private LoginButton button;
     private CallbackManager callbackManager;
 
+    //shared preferences
+    SharedPreferences sp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         /********* Initialize the Facebook SDK before setContentView *********/
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.login);
-
-        try {
-            PackageInfo info =
-                    getPackageManager().getPackageInfo("cse190.facebooklogin",
-            PackageManager.GET_SIGNATURES);
-
-            for(Signature signature : info.signatures) {
-                MessageDigest md =
-                        MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                Log.e("KeyHash:", Base64.encodeToString(md.digest(),
-                        Base64.DEFAULT));
-            }
-        } catch (NameNotFoundException e) {
-        } catch (NoSuchAlgorithmException e) {
-        }
-
 
         /**********************************************************************
          * 1. Initialize FacebookSDK
@@ -200,6 +183,14 @@ public class LoginActivity extends AppCompatActivity
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+        if(AccessToken.getCurrentAccessToken() != null)
+        {
+            Intent intent = new Intent(getApplicationContext(),
+                    CrimeListActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     /**********************************************************************

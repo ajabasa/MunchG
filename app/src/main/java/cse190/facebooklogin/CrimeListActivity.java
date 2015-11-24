@@ -14,7 +14,7 @@ public class CrimeListActivity extends SingleFragmentActivity {
         return new CrimeListFragment();
     }
     public void createPost(View view) {
-        Intent intent = new Intent(this, SuccessfulLoginActivity.class);
+        Intent intent = new Intent(this, CreatePostActivity.class);
         startActivity(intent);
     }
 
