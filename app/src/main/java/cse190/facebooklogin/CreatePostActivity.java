@@ -114,10 +114,18 @@ public class CreatePostActivity extends Activity {
     public void sendPost(View view) {
         Intent intent = new Intent(this, CrimeListActivity.class);
 
-        EditText editText1 = (EditText) findViewById(R.id.time);
+        EditText editText1 = (EditText) findViewById(R.id.timeStart);
         String message1 = editText1.getText().toString();
         try {
-            info.put("time", message1);
+            info.put("timeStart", message1);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        EditText editText1b = (EditText) findViewById(R.id.timeEnd);
+        String message1b = editText1b.getText().toString();
+        try {
+            info.put("timeEnd", message1b);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -139,7 +147,7 @@ public class CreatePostActivity extends Activity {
         }
 
         //volley stuff
-        String url = "http://httpbin.org/post";
+        String url = "mongodb://localhost:27017/testdb";
 
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, (String)null,
                 new Response.Listener<JSONObject>() {
