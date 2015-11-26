@@ -9,29 +9,30 @@
         android:layout_height="wrap_content"
         android:inputType="time"
         android:ems="10"
-        android:id="@+id/editText"
-        android:hint="Enter desired time"/>
+        android:id="@+id/time"
+        android:hint="@string/time"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:hint="Enter Desired Date" />
+        android:id="@+id/date"
+        android:hint="@string/date" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText3"
+        android:id="@+id/location"
         android:layout_gravity="center_horizontal"
-        android:hint="Enter Desired Location"/>
+        android:hint="@string/location"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next"
-        android:id="@+id/button"
-        android:layout_gravity="right" />
+        android:text="Create"
+        android:id="@+id/createPost"
+        android:layout_gravity="right"
+        android:onClick="sendPost"/>
 
 </LinearLayout>
