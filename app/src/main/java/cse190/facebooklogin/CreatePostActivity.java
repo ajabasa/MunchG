@@ -7,6 +7,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
@@ -100,45 +105,8 @@ public class CreatePostActivity extends Activity {
         request.setParameters(parameters);
         request.executeAsync();
 
-        //volley stuff
-        /*String url = "http://httpbin.org/post";
-
-        StringRequest postRequest = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonResponse = new JSONObject(response).getJSONObject("form");
-                            String site = jsonResponse.getString("site"),
-                                    network = jsonResponse.getString("network");
-                            System.out.println("Site: "+site+"\nNetwork: "+network);
-                            System.out.println("Volley object: " + jsonResponse.toString());
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
-                    }
-                }
-        ) {
-            @Override
-            protected Map<String, String> getParams()
-            {
-                Map<String, String>  params = new HashMap<>();
-                // the POST parameters:
-                params.put("site", "code");
-                params.put("network", "tutsplus");
-                return params;
-            }
-        };
-        Volley.newRequestQueue(getApplicationContext()).add(postRequest);*/
 
 
-    //all this is in onCreate... not sure if it should be
 
     }
 
@@ -169,6 +137,45 @@ public class CreatePostActivity extends Activity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        //volley stuff
+        String url = "http://httpbin.org/post";
+
+        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, (String)null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        /*try {
+                            Log.e(TAG, response.toString());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }*/
+                        //Log.e(TAG, response.toString());
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                }
+        ) {
+            /*@Override
+            protected Map<String, String> getParams()
+            {
+                Map<String, String>  params = new HashMap<>();
+                // the POST parameters:
+                params.put("user_id", info.get(user_id));
+                params.put("name", info[name]);
+                params.put("gender", object.getString("gender"));
+                params.put("profilepic_url", object.getString("link"));
+
+                return params;
+            }*/
+        };
+        Volley.newRequestQueue(getApplicationContext()).add(postRequest);
+
+
 
         startActivity(intent);
     }
