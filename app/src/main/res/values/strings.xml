@@ -27,6 +27,7 @@
     <string name="crimes_title">Crimes</string>
 
     <!-- Strings from post create -->
+    <string name="postName">Enter a title for your post</string>
     <string name="timeStart">Enter desired start time</string>
     <string name="timeEnd">Enter desired end time</string>
     <string name="date">Enter desired date</string>

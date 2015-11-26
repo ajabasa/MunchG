@@ -7,6 +7,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/postName"
+        android:layout_gravity="center_horizontal"
+        android:hint="@string/postName"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:inputType="time"
         android:ems="10"
         android:id="@+id/timeStart"

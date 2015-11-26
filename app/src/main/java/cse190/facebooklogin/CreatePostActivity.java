@@ -89,10 +89,10 @@ public class CreatePostActivity extends Activity {
                         //json stuff
                         try {
                             //put fields into our Json info object
-                            info.put("user_id", object.getString("id"));
-                            info.put("name", object.getString("name"));
-                            info.put("gender", object.getString("gender"));
-                            info.put("profilepic_url", object.getString("link"));
+                            //info.put("user_id", object.getString("id"));
+                            info.put("fullName", object.getString("name"));
+                            //info.put("gender", object.getString("gender"));
+                            //info.put("profilepic_url", object.getString("link"));
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -102,6 +102,7 @@ public class CreatePostActivity extends Activity {
                 });
         Bundle parameters = new Bundle();
         parameters.putString("fields", "id, first_name, last_name, name, gender, link, birthday, picture");
+        //parameters.putString("fields", "fullName");
         request.setParameters(parameters);
         request.executeAsync();
 
@@ -114,10 +115,18 @@ public class CreatePostActivity extends Activity {
     public void sendPost(View view) {
         Intent intent = new Intent(this, CrimeListActivity.class);
 
+        EditText editTextp = (EditText) findViewById(R.id.postName);
+        String messagep = editTextp.getText().toString();
+        try {
+            info.put("postName", messagep);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         EditText editText1 = (EditText) findViewById(R.id.timeStart);
         String message1 = editText1.getText().toString();
         try {
-            info.put("timeStart", message1);
+            info.put("startTime", message1);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -125,7 +134,7 @@ public class CreatePostActivity extends Activity {
         EditText editText1b = (EditText) findViewById(R.id.timeEnd);
         String message1b = editText1b.getText().toString();
         try {
-            info.put("timeEnd", message1b);
+            info.put("endTime", message1b);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -133,7 +142,7 @@ public class CreatePostActivity extends Activity {
         EditText editText2 = (EditText) findViewById(R.id.date);
         String message2 = editText2.getText().toString();
         try {
-            info.put("date", message2);
+            info.put("munchDate", message2);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -146,8 +155,16 @@ public class CreatePostActivity extends Activity {
             e.printStackTrace();
         }
 
+        EditText editText4 = (EditText) findViewById(R.id.description);
+        String message4 = editText4.getText().toString();
+        try {
+            info.put("description", message4);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         //volley stuff
-        String url = "mongodb://localhost:27017/testdb";
+        String url = "http://52.10.49.188:3000/munchlist";
 
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, (String)null,
                 new Response.Listener<JSONObject>() {
