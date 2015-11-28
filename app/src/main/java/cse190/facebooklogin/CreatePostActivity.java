@@ -19,6 +19,10 @@ import com.facebook.GraphResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import android.support.v4.view.ViewPager;
+
 /******************************************************************************
  * Activity created/ called from a successful FB Login
  *****************************************************************************/
@@ -34,6 +38,10 @@ public class CreatePostActivity extends Activity {
     String gender;
     String profilepic_url;*/
 
+    //analytics
+    private Tracker mTracker;
+    private ViewPager mViewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +54,18 @@ public class CreatePostActivity extends Activity {
          * See note on onSuccess on using the current Access Token
         **********************************************************************/
 
-
+        //analytics
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        //String name = getCurrentImageTitle();
+        Log.d("Setting screen name: ", "createPostActivity");
+        mTracker.setScreenName("Image~" + "createPostActivity");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
 
 
 

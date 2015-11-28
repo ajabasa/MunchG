@@ -41,6 +41,11 @@ import com.facebook.login.widget.LoginButton;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import android.support.v4.view.ViewPager;
+
+
 import static android.Manifest.permission.READ_CONTACTS;
 
 /******************************************************************************
@@ -83,6 +88,12 @@ public class LoginActivity extends AppCompatActivity
     //shared preferences
     SharedPreferences sp;
 
+    //analytics
+    private Tracker mTracker;
+    private ViewPager mViewPager;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -90,6 +101,21 @@ public class LoginActivity extends AppCompatActivity
         /********* Initialize the Facebook SDK before setContentView *********/
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.login);
+
+        //analytics
+        // Obtain the shared Tracker instance.
+
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        //String name = getCurrentImageTitle();
+        Log.d("Setting screen name: ", "loginActivity");
+        mTracker.setScreenName("Image~" + "loginActivity");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
+
 
         /**********************************************************************
          * 1. Initialize FacebookSDK
@@ -192,6 +218,7 @@ public class LoginActivity extends AppCompatActivity
             finish();
         }
     }
+
 
     /**********************************************************************
      * This method is called when your application calls
