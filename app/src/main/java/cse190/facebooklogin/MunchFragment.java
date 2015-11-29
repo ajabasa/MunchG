@@ -6,17 +6,15 @@ package cse190.facebooklogin;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ImageView;
+import android.graphics.Color;
 
 import java.text.DateFormat;
 import java.util.UUID;
@@ -62,7 +60,7 @@ public class MunchFragment extends Fragment {
 
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
-        View v = inflater.inflate( R.layout.fragment_crime, parent, false);
+        View v = inflater.inflate( R.layout.fragment_munch, parent, false);
 
         //image = (ImageView) getView().findViewById(R.id.imageView1);
         //image.setImageResource(R.drawable.personicon);
@@ -94,10 +92,11 @@ public class MunchFragment extends Fragment {
         mDateButton = (Button)v.findViewById(R.id.crime_date);
         // set its text to the date of crime
         //DateFormat dateFormat = android.text
-        mDateButton.setText( DateFormat.getDateTimeInstance().format(mMunch.getDate()));
+        mDateButton.setText( "Posted on: " + DateFormat.getDateTimeInstance().format(mMunch.getDate()));
         // mDateButton.setText(mMunch.getDate().toString());
         // disabled for now
         mDateButton.setEnabled(false);
+       // mDateButton.getBackground().setColorFilter(0xA4D3EE);
 
         // get reference to CheckBox
         mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);

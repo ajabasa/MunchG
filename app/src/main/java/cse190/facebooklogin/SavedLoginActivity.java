@@ -155,7 +155,7 @@ public class SavedLoginActivity extends AppCompatActivity
                 });
 
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
+        /*mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -176,7 +176,7 @@ public class SavedLoginActivity extends AppCompatActivity
             public void onClick(View view) {
                 attemptLogin();
             }
-        });
+        });*/
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);

@@ -67,7 +67,7 @@ public class MunchListFragment extends ListFragment {
         public View getView(int position, View convertView, ViewGroup parent) {
             // If we weren't given a view, inflate one
             if(convertView == null) {
-                convertView = getActivity().getLayoutInflater().inflate(R.layout.list_item_crime, null);
+                convertView = getActivity().getLayoutInflater().inflate(R.layout.list_item_munch, null);
             }
 
             // Configure the view for this Munch
