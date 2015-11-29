@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FacebookLogin</string>
+    <string name="app_name">Munch</string>
     
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -42,4 +42,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="name_label">name</string>
     <string name="login_text">Welcome To Munch!</string>
+    <string name="munch_title">Munch title</string>
+    <string name="munch_date">Munch date</string>
 </resources>

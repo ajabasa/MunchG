@@ -80,9 +80,9 @@ public class MunchListFragment extends ListFragment {
             TextView dateTextView =
                     (TextView)convertView.findViewById(R.id.crime_list_item_dateTextView);
             dateTextView.setText(c.getDate().toString());
-            CheckBox solvedCheckBox =
+            /*CheckBox solvedCheckBox =
                     (CheckBox)convertView.findViewById(R.id.crime_list_item_solvedCheckBox);
-            solvedCheckBox.setChecked(c.isSolved());
+            solvedCheckBox.setChecked(c.isSolved());*/
 
             return convertView;
         }
