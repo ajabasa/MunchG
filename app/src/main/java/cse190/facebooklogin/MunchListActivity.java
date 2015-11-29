@@ -7,11 +7,11 @@ import android.view.View;
 /**
  * Created by josh on 11/10/2015.
  */
-public class CrimeListActivity extends SingleFragmentActivity {
+public class MunchListActivity extends SingleFragmentActivity {
 
     @Override
     protected Fragment createFragment() {
-        return new CrimeListFragment();
+        return new MunchListFragment();
     }
     public void createPost(View view) {
         Intent intent = new Intent(this, CreatePostActivity.class);

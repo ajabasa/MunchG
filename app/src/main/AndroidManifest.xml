@@ -48,7 +48,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="cse190.facebooklogin.CrimeListActivity"
+            android:name=".MunchListActivity"
             android:label="@string/app_name"/>
 
         <activity
@@ -56,7 +56,7 @@
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"/>
 
-        <activity android:name=".CrimePagerActivity"
+        <activity android:name=".MunchPagerActivity"
             android:label="@string/app_name">
         </activity>
 
@@ -71,6 +71,7 @@
         <activity android:name=".SavedLoginActivity"
             android:label="@string/app_name">
         </activity>
+
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

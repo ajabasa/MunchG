@@ -13,9 +13,9 @@ import java.util.ArrayList;
 /**
  * Created by josh on 11/12/2015.
  */
-public class CrimePagerActivity extends FragmentActivity {
+public class MunchPagerActivity extends FragmentActivity {
     private ViewPager mViewPager;
-    private ArrayList<Crime> mCrimes;
+    private ArrayList<Munch> mMunches;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,8 +26,8 @@ public class CrimePagerActivity extends FragmentActivity {
         mViewPager.setId(R.id.viewPager);
         setContentView(mViewPager);
 
-        // get dataset from CrimeLab
-        mCrimes = CrimeLab.get(this).getCrimes();
+        // get dataset from MunchLab
+        mMunches = MunchLab.get(this).getCrimes();
 
         // get the activity's FragmentManager
         FragmentManager fm = getSupportFragmentManager();
@@ -36,14 +36,14 @@ public class CrimePagerActivity extends FragmentActivity {
             // Returns the number of items in the array list
             @Override
             public int getCount() {
-                return mCrimes.size();
+                return mMunches.size();
             }
 
-            // Create a properly configured CrimeFragment
+            // Create a properly configured MunchFragment
             @Override
             public Fragment getItem(int pos) {
-                Crime crime = mCrimes.get(pos);
-                return CrimeFragment.newInstance(crime.getId());
+                Munch munch = mMunches.get(pos);
+                return MunchFragment.newInstance(munch.getId());
             }
         });
     }

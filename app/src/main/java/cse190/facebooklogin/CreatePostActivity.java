@@ -132,7 +132,7 @@ public class CreatePostActivity extends Activity {
 
     /** Called when the user clicks the Send button */
     public void sendPost(View view) {
-        Intent intent = new Intent(this, CrimeListActivity.class);
+        Intent intent = new Intent(this, MunchListActivity.class);
 
         EditText editTextp = (EditText) findViewById(R.id.postName);
         String messagep = editTextp.getText().toString();

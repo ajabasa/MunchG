@@ -9,41 +9,41 @@ import java.util.UUID;
  * Created by josh on 11/10/2015.
  * Singleton class
  */
-public class CrimeLab {
-    private ArrayList<Crime> mCrimes;
+public class MunchLab {
+    private ArrayList<Munch> mMunches;
 
-    private static CrimeLab sCrimeLab;
+    private static MunchLab sMunchLab;
     private Context mAppContext;
 
-    private CrimeLab(Context appContext){
+    private MunchLab(Context appContext){
         mAppContext = appContext;
-        mCrimes = new ArrayList<Crime>();
+        mMunches = new ArrayList<Munch>();
 
         // populate with crimes
         for( int i = 0; i < 100; i++ ) {
-            Crime c = new Crime();
-            c.setTitle("Crime #" + i);
+            Munch c = new Munch();
+            c.setFullName("Name: " + i);
             c.setSolved(i%2 == 0); // every other one
-            mCrimes.add(c);
+            mMunches.add(c);
         }
     }
 
-    public static CrimeLab get(Context c) {
-        if( sCrimeLab == null ) {
+    public static MunchLab get(Context c) {
+        if( sMunchLab == null ) {
             // getApplicationContext gets a long-term Context that is global to the application
-            sCrimeLab = new CrimeLab(c.getApplicationContext());
+            sMunchLab = new MunchLab(c.getApplicationContext());
         }
-        return sCrimeLab;
+        return sMunchLab;
     }
 
-    public ArrayList<Crime> getCrimes(){
-        return mCrimes;
+    public ArrayList<Munch> getCrimes(){
+        return mMunches;
     }
 
 
     // find a specific crime
-    public Crime getCrime( UUID id) {
-        for( Crime c: mCrimes ) {
+    public Munch getCrime( UUID id) {
+        for( Munch c: mMunches) {
             if( c.getId().equals(id))
                 return c;
         }
