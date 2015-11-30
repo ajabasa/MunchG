@@ -185,10 +185,12 @@ public class CreatePostActivity extends Activity {
         //volley stuff
         String url = "http://52.10.49.188:3000/munchlist";
 
-        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, (String)null,
+        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, info,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        Log.e(TAG, response.toString());
+
                         /*try {
                             Log.e(TAG, response.toString());
                         } catch (JSONException e) {
@@ -200,6 +202,7 @@ public class CreatePostActivity extends Activity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, "Error with volley send");
                         error.printStackTrace();
                     }
                 }
