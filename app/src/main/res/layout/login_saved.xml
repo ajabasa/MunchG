@@ -7,6 +7,30 @@
     android:paddingTop="@dimen/activity_vertical_margin" tools:context=".SavedLoginActivity">
 
     <!-- Login progress -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/login_text2"
+        android:id="@+id/textView6" />
+
+    <ImageView
+
+        android:id="@+id/imageView"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/personicon"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:text="@string/continueButton"
+        android:layout_gravity="center_horizontal"
+        android:onClick= "continueMunch"/>
+
     <ProgressBar android:id="@+id/login_progress" style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:layout_marginBottom="8dp" android:visibility="gone" />
@@ -17,16 +41,6 @@
 
         <LinearLayout android:id="@+id/email_login_form" android:layout_width="match_parent"
             android:layout_height="wrap_content" android:orientation="vertical">
-
-            <android.support.design.widget.TextInputLayout android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </android.support.design.widget.TextInputLayout>
 
             <com.facebook.login.widget.LoginButton
                 android:id="@+id/facebook_login"

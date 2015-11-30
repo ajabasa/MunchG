@@ -212,10 +212,11 @@ public class LoginActivity extends AppCompatActivity
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
 
+        //if already logged in previously
         if(AccessToken.getCurrentAccessToken() != null)
         {
             Intent intent = new Intent(getApplicationContext(),
-                    MunchListActivity.class);
+                    SavedLoginActivity.class);
             startActivity(intent);
             finish();
         }
