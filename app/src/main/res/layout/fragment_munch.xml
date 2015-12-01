@@ -18,16 +18,14 @@
         android:text="@string/postName_label"
         style="?android:listSeparatorTextViewStyle"
 
-        android:id="@+id/textView3" />
+        android:textAllCaps="false"
+        android:id="@+id/munch_PostName"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:clickable="true"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center" />
 
-
-    <TextView
-        android:id="@+id/munch_postName"
-        android:layout_width="278dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:hint="@string/title_hint"
-        />
 
     <TextView
         android:layout_width="278dp"

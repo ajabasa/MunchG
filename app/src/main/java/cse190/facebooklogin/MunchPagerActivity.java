@@ -6,9 +6,11 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * Created by josh on 11/12/2015.
@@ -43,8 +45,17 @@ public class MunchPagerActivity extends FragmentActivity {
             @Override
             public Fragment getItem(int pos) {
                 Munch munch = mMunches.get(pos);
+                Log.d("MunchPagerActivity", "MunchFragment created " + munch.getId() );
                 return MunchFragment.newInstance(munch.getId());
             }
         });
+
+        UUID munchId = (UUID)getIntent().getSerializableExtra(MunchFragment.EXTRA_CRIME_ID);
+        for(int i = 0; i < mMunches.size(); i++) {
+            if(mMunches.get(i).getId().equals(munchId)) {
+                mViewPager.setCurrentItem(i);
+                break;
+            }
+        }
     }
 }

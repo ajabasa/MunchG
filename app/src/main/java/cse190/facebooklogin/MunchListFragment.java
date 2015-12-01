@@ -58,7 +58,7 @@ public class MunchListFragment extends ListFragment {
                             // loop through each json object
                             //String jsonResponse = "";
                             Log.d(TAG, "Munchlist response length: " + munchPosts.length() );
-                            for (int i = munchPosts.length() - 1; i >= 0; i--) {
+                            for (int i = 0; i < munchPosts.length(); i++) {
                                 JSONObject munch = (JSONObject) munchPosts.get(i);
                                 Log.d(TAG, "Reading munch: " + munch.toString());
                                 MunchLab.get(getActivity()).addMunch(munch);

@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.ImageView;
 import android.graphics.Color;
 
+import junit.framework.Test;
+
 import java.text.DateFormat;
 import java.util.UUID;
 
@@ -67,7 +69,7 @@ public class MunchFragment extends Fragment {
         //image.setImageResource(R.drawable.personicon);
 
         Log.d("MunchFragment", "MunchFragment Munch Name = " + mMunch.getPostName());
-        mPostNameField = (TextView)v.findViewById(R.id.munch_postName);
+        mPostNameField = (TextView)v.findViewById(R.id.munch_PostName);
         // Set up postName
         mPostNameField.setText(mMunch.getPostName());
         /*mPostNameField.addTextChangedListener(new TextWatcher() {
@@ -87,9 +89,32 @@ public class MunchFragment extends Fragment {
             }
         });*/
 
+        // Set up poster name
         mFullName = (TextView)v.findViewById(R.id.munch_fullName);
-        // Set up postName
         mFullName.setText(mMunch.getFullName());
+
+        // Set start time
+        mStartTime = (TextView)v.findViewById(R.id.munch_startTime);
+        mStartTime.setText(mMunch.getStartTime());
+
+        // Set end time
+        mEndTime = (TextView)v.findViewById(R.id.munch_endTime);
+        if( mMunch.getEndTime() != null) {
+            mEndTime.setText(mMunch.getEndTime());
+        } else
+        {
+            mEndTime.setText("no end time");
+        }
+
+        mLocation = (TextView)v.findViewById(R.id.munch_location);
+        mLocation.setText(mMunch.getLocation());
+
+        mDescription = (TextView) v.findViewById(R.id.munch_description);
+        if(mMunch.getDescription() != null) {
+            mDescription.setText(mMunch.getDescription());
+        } else {
+            mDescription.setText("None");
+        }
 
         // create reference to new button
         //mDateButton = (Button)v.findViewById(R.id.crime_date);

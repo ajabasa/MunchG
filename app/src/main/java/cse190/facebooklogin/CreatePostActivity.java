@@ -196,13 +196,6 @@ public class CreatePostActivity extends Activity {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.e(TAG, response.toString());
-
-                        /*try {
-                            Log.e(TAG, response.toString());
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }*/
-                        //Log.e(TAG, response.toString());
                     }
                 },
                 new Response.ErrorListener() {
@@ -213,18 +206,6 @@ public class CreatePostActivity extends Activity {
                     }
                 }
         ) {
-            /*@Override
-            protected Map<String, String> getParams()
-            {
-                Map<String, String>  params = new HashMap<>();
-                // the POST parameters:
-                params.put("user_id", info.get(user_id));
-                params.put("name", info[name]);
-                params.put("gender", object.getString("gender"));
-                params.put("profilepic_url", object.getString("link"));
-
-                return params;
-            }*/
         };
         // create instance of RequestQueue
         RequestQueue queue = VolleySingleton.getInstance(this).getRequestQueue();
