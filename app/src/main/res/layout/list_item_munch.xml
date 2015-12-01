@@ -20,7 +20,9 @@
         android:textStyle="bold"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
-        android:text="@string/munch_title"/>
+        android:text="@string/munch_title"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/crime_list_item_dateTextView"
@@ -31,6 +33,7 @@
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:paddingTop="4dp"
-        android:text="@string/munch_date"/>
+        android:text="@string/munch_date"
+        android:textStyle="italic" />
 
 </RelativeLayout>

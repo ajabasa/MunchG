@@ -11,9 +11,9 @@ public class Munch {
     private UUID mId;
     private String mFullName;
     private String mPostName;
-    private Date mDate;
-    private Time mStartTime;
-    private Time mEndTime;
+    private String mDate;
+    private String mStartTime;
+    private String mEndTime;
     private String mLocation;
     private String mDescription;
     private boolean mSolved;
@@ -21,7 +21,7 @@ public class Munch {
     public Munch() {
         // Generate unique identifier
         mId = UUID.randomUUID();
-        mDate = new Date(); // automatically sets date to current date
+        // mDate = new Date().toString(); // automatically sets date to current date
     }
 
     @Override
@@ -37,28 +37,28 @@ public class Munch {
 
     public void setPostName(String name){ this.mPostName = name;}
 
-    public Date getDate() {
+    public String getDate() {
         return mDate;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.mDate = date;
     }
 
-    public Time getStartTime() {
+    public String getStartTime() {
         return mStartTime;
     }
 
-    public void setStartTime(Time stime) {
+    public void setStartTime(String stime) {
         this.mStartTime = stime;
     }
 
-    public Time getEndTime() {
+    public String getEndTime() {
         return mEndTime;
     }
 
-    public void setEndTime(Time etime) {
-        this.mEndTime = etime;
+    public void setEndTime(String time) {
+        this.mEndTime = time;
     }
 
     public String getLocation() { return mLocation; }
@@ -80,6 +80,5 @@ public class Munch {
     public UUID getId() {
         return mId;
     }
-
 }
 

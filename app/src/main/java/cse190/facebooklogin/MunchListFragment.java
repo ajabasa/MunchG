@@ -58,7 +58,7 @@ public class MunchListFragment extends ListFragment {
                             // loop through each json object
                             //String jsonResponse = "";
                             Log.d(TAG, "Munchlist response length: " + munchPosts.length() );
-                            for (int i = 0; i < munchPosts.length(); i++) {
+                            for (int i = munchPosts.length() - 1; i >= 0; i--) {
                                 JSONObject munch = (JSONObject) munchPosts.get(i);
                                 Log.d(TAG, "Reading munch: " + munch.toString());
                                 MunchLab.get(getActivity()).addMunch(munch);
@@ -99,6 +99,7 @@ public class MunchListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         Munch c = ((CrimeAdapter)getListAdapter()).getItem(position);
+        Log.e(TAG, "ITEM CLICKED. Position: " + position + ", Postname: " + c.getPostName() );
 
         /*
         // Start CrimeActivity by creating an explicit intent naming CrimeActivity class
@@ -134,10 +135,10 @@ public class MunchListFragment extends ListFragment {
             // reference each widget in the view object and configure it with Munch's data
             TextView titleTextView=
                     (TextView)convertView.findViewById(R.id.crime_list_item_titleTextView);
-            titleTextView.setText(c.getFullName());
+            titleTextView.setText(c.getPostName());
             TextView dateTextView =
                     (TextView)convertView.findViewById(R.id.crime_list_item_dateTextView);
-            dateTextView.setText(c.getDate().toString());
+            dateTextView.setText(c.getDate());
             /*CheckBox solvedCheckBox =
                     (CheckBox)convertView.findViewById(R.id.crime_list_item_solvedCheckBox);
             solvedCheckBox.setChecked(c.isSolved());*/

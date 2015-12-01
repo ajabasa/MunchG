@@ -9,7 +9,8 @@
         android:layout_width="93dp"
         android:layout_height="93dp"
         android:id="@+id/imageView2"
-        android:src="@mipmap/personicon"/>
+        android:src="@mipmap/personicon"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="266dp"
@@ -108,7 +109,7 @@
         android:layout_marginRight="16dp"
         android:text="@string/crime_solved_label"
          />
-
+<!--
     <Button
         android:id="@+id/crime_date"
         android:layout_width="match_parent"
@@ -116,7 +117,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:background="@color/myColor"
-        />
+        /> -->
 
 
 </LinearLayout>

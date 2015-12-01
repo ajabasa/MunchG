@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
 
     <EditText
@@ -14,7 +15,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="time"
         android:ems="10"
         android:id="@+id/timeStart"
         android:hint="@string/timeStart"/>
@@ -22,7 +22,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="time"
         android:ems="10"
         android:id="@+id/timeEnd"
         android:layout_gravity="center_horizontal"
@@ -31,7 +30,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="date"
         android:ems="10"
         android:id="@+id/date"
         android:hint="@string/date" />
@@ -50,11 +48,16 @@
         android:hint="@string/description"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="Create"
         android:id="@+id/createPost"
         android:layout_gravity="right"
-        android:onClick="sendPost"/>
+        android:onClick="sendPost"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:background="#a6003cff"
+        android:textColor="#ffffff"
+        android:layout_margin="15dp" />
 
 </LinearLayout>

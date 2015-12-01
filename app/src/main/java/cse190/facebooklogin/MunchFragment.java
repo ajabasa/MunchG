@@ -6,6 +6,7 @@ package cse190.facebooklogin;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,6 +65,8 @@ public class MunchFragment extends Fragment {
 
         //image = (ImageView) getView().findViewById(R.id.imageView1);
         //image.setImageResource(R.drawable.personicon);
+
+        Log.d("MunchFragment", "MunchFragment Munch Name = " + mMunch.getPostName());
         mPostNameField = (TextView)v.findViewById(R.id.munch_postName);
         // Set up postName
         mPostNameField.setText(mMunch.getPostName());
@@ -89,13 +92,13 @@ public class MunchFragment extends Fragment {
         mFullName.setText(mMunch.getFullName());
 
         // create reference to new button
-        mDateButton = (Button)v.findViewById(R.id.crime_date);
+        //mDateButton = (Button)v.findViewById(R.id.crime_date);
         // set its text to the date of crime
         //DateFormat dateFormat = android.text
-        mDateButton.setText( "Posted on: " + DateFormat.getDateTimeInstance().format(mMunch.getDate()));
+        // mDateButton.setText( "Posted on: " + mMunch.getDate());
         // mDateButton.setText(mMunch.getDate().toString());
         // disabled for now
-        mDateButton.setEnabled(false);
+        //mDateButton.setEnabled(false);
        // mDateButton.getBackground().setColorFilter(0xA4D3EE);
 
         // get reference to CheckBox

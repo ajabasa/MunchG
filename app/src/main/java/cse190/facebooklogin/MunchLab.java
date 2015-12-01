@@ -17,7 +17,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -93,7 +95,7 @@ public class MunchLab {
         return mMunches;
     }
 
-    // Adds a munch to the munchlist (check chapter 16)
+    // Adds a munch to the munchlist from a json(check chapter 16)
     public void addMunch(JSONObject json) {
         Munch c = new Munch();
         try {
@@ -107,6 +109,31 @@ public class MunchLab {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        try {
+            c.setDate(json.getString("munchDate"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            c.setStartTime(json.getString("startTime"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            c.setEndTime(json.getString("endTime"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            c.setDescription(json.getString("description"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         Log.d(TAG, "Added munch: postName = " + c.getPostName());
         mMunches.add(c);
     }
