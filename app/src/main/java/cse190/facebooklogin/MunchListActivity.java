@@ -13,6 +13,7 @@ public class MunchListActivity extends SingleFragmentActivity {
     protected Fragment createFragment() {
         return new MunchListFragment();
     }
+
     public void createPost(View view) {
         Intent intent = new Intent(this, CreatePostActivity.class);
         startActivity(intent);

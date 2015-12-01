@@ -8,11 +8,13 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.facebook.AccessToken;
+import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 
@@ -46,6 +48,7 @@ public class CreatePostActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_post_create);
 
         /**********************************************************************
@@ -182,6 +185,9 @@ public class CreatePostActivity extends Activity {
             e.printStackTrace();
         }
 
+        String toPrint = info.toString();
+        Log.e(TAG, "json: " + toPrint);
+
         //volley stuff
         String url = "http://52.10.49.188:3000/munchlist";
 
@@ -220,7 +226,10 @@ public class CreatePostActivity extends Activity {
                 return params;
             }*/
         };
-        Volley.newRequestQueue(getApplicationContext()).add(postRequest);
+        // create instance of RequestQueue
+        RequestQueue queue = VolleySingleton.getInstance(this).getRequestQueue();
+        queue.add(postRequest);
+        //Volley.newRequestQueue(getApplicationContext()).add(postRequest);
 
 
 
