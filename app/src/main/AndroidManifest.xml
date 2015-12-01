@@ -71,6 +71,17 @@
         <activity android:name=".SavedLoginActivity"
             android:label="@string/app_name">
         </activity>
+        <activity android:name=".setDateActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity android:name=".setSTimeActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity android:name=".setETimeActivity"
+            android:label="@string/app_name">
+        </activity>
 
 
         <meta-data
