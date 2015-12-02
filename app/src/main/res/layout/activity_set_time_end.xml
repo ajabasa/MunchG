@@ -18,12 +18,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/timePicker2" />
 
+
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="123dp"
         android:layout_height="wrap_content"
-        android:text="Finish"
+        android:text="Next"
         android:id="@+id/finishPost"
         android:layout_gravity="right"
-        android:onClick="finishPost"/>
-
+        android:onClick="finishPost"
+        android:background="#eb6e34"
+        android:layout_margin="10dp"
+        android:textColor="@color/background_floating_material_light"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 </LinearLayout>

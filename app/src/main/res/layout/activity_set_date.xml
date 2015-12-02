@@ -12,11 +12,17 @@
         android:id="@+id/datePicker" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="123dp"
         android:layout_height="wrap_content"
         android:text="Next"
         android:id="@+id/nextScreenSTime"
         android:layout_gravity="right"
-        android:onClick="nextScreenStartTime"/>
+        android:onClick="nextScreenStartTime"
+        android:layout_weight="0.05"
+        android:background="#eb6e34"
+        android:layout_margin="10dp"
+        android:textColor="@color/background_floating_material_light"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
 </LinearLayout>

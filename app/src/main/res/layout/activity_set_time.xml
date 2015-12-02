@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,11 +19,16 @@
         android:id="@+id/timePicker1" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="123dp"
         android:layout_height="wrap_content"
         android:text="Next"
         android:id="@+id/nextScreenEndTime"
         android:layout_gravity="right"
-        android:onClick="nextScreenEndTime"/>
+        android:onClick="nextScreenEndTime"
+        android:background="#eb6e34"
+        android:layout_margin="10dp"
+        android:textColor="@color/background_floating_material_light"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
 </LinearLayout>

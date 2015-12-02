@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
 
     <EditText
@@ -9,27 +10,35 @@
         android:layout_height="wrap_content"
         android:id="@+id/postName"
         android:layout_gravity="center_horizontal"
-        android:hint="@string/postName"/>
+        android:hint="@string/postName"
+        android:layout_margin="10dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/location"
         android:layout_gravity="center_horizontal"
-        android:hint="@string/location"/>
+        android:hint="@string/location"
+        android:layout_margin="10dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/description"
-        android:hint="@string/description"/>
+        android:hint="@string/description"
+        android:layout_margin="10dp" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="123dp"
         android:layout_height="wrap_content"
         android:text="Next"
         android:id="@+id/createPost"
         android:layout_gravity="right"
-        android:onClick="toDateScreen"/>
+        android:onClick="toDateScreen"
+        android:background="#eb6e34"
+        android:layout_margin="10dp"
+        android:textColor="@color/background_floating_material_light"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
 </LinearLayout>
