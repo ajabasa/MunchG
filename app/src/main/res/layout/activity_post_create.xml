@@ -14,31 +14,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:id="@+id/timeStart"
-        android:hint="@string/timeStart"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:id="@+id/timeEnd"
-        android:layout_gravity="center_horizontal"
-        android:hint="@string/timeEnd"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:id="@+id/date"
-        android:hint="@string/date" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/location"
         android:layout_gravity="center_horizontal"
         android:hint="@string/location"/>

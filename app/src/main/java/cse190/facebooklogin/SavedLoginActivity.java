@@ -47,6 +47,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.json.*;
 
+import com.facebook.login.widget.ProfilePictureView;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import android.support.v4.view.ViewPager;
@@ -88,6 +89,7 @@ public class SavedLoginActivity extends AppCompatActivity
      *************************************************************************/
     private LoginButton button;
     private CallbackManager callbackManager;
+    private ProfilePictureView profile;
 
     //analytics
     private Tracker mTracker;
@@ -102,13 +104,15 @@ public class SavedLoginActivity extends AppCompatActivity
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.login_saved);
 
+
+
         //analytics
         // Obtain the shared Tracker instance.
 
         AnalyticsApplication application = (AnalyticsApplication) getApplication();
         mTracker = application.getDefaultTracker();
         //String name = getCurrentImageTitle();
-        Log.d("Setting screen name: ", "SavedLoginActivity .!.");
+        Log.d("Setting screen name: ", "SavedLoginActivity");
         mTracker.setScreenName("Image~" + "SavedLoginActivity");
         mTracker.send(new HitBuilders.ScreenViewBuilder().build());
         mTracker.send(new HitBuilders.EventBuilder()
@@ -192,8 +196,10 @@ public class SavedLoginActivity extends AppCompatActivity
                             Log.d( "user_me request = ", object.getString("name"));
                             String name1 = object.getString("name");
                             TextView toEdit= (TextView)findViewById(R.id.textView6);
+                            profile = (ProfilePictureView)findViewById(R.id.picture);
                             // Set up postName
-                            toEdit.setText("Welcome back " + name1);
+                            profile.setProfileId(object.getString("id"));
+                            toEdit.setText(name1);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

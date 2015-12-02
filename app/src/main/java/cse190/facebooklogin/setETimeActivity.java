@@ -112,6 +112,8 @@ public class setETimeActivity extends Activity {
                             //put fields into our Json info object
                             //info.put("user_id", object.getString("id"));
                             info.put("fullName", object.getString("name"));
+                            info.put("picture", object.getString("picture"));
+                            info.put("facebookId", object.getString("id"));
 
                             info.put("postName", postName);
                             info.put("location", location);
@@ -124,7 +126,6 @@ public class setETimeActivity extends Activity {
                             info.put("hourE", String.valueOf(myHour));
                             info.put("minuteE", String.valueOf(myMin));
                             callVolley();
-
 
                             //info.put("gender", object.getString("gender"));
                             //info.put("profilepic_url", object.getString("link"));

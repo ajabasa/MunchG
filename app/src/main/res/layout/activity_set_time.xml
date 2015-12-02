@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Enter Desired Start Time:"
+        android:text="Start Time:"
         android:id="@+id/textView8"
         android:layout_gravity="center_horizontal" />
 

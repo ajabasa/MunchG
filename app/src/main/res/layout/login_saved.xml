@@ -12,16 +12,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/login_text2"
         android:id="@+id/textView6" />
 
-    <ImageView
-
-        android:id="@+id/imageView"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+    <com.facebook.login.widget.ProfilePictureView
+        android:id="@+id/picture"
         android:layout_gravity="center"
-        android:src="@mipmap/personicon"/>
+        android:layout_marginTop="20dp"
+        android:layout_width="150dp"
+        android:layout_height="166dp"/>
 
     <Button
         android:layout_width="wrap_content"

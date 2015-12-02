@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Enter Desired End Time:"
+        android:text="End Time:"
         android:id="@+id/textView7"
         android:layout_gravity="center_horizontal" />
 
