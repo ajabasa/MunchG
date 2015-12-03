@@ -15,7 +15,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
+//import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -199,7 +199,7 @@ public class SavedLoginActivity extends AppCompatActivity
                             profile = (ProfilePictureView)findViewById(R.id.picture);
                             // Set up postName
                             profile.setProfileId(object.getString("id"));
-                            toEdit.setText(name1);
+                            toEdit.setText("Welcome Back, " + name1 +"!");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

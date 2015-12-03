@@ -91,6 +91,11 @@ public class MunchLab {
         return sMunchLab;
     }
 
+    public void reset(){
+        mMunches = new ArrayList<Munch>();
+    }
+
+
     public ArrayList<Munch> getCrimes(){
         return mMunches;
     }
@@ -133,6 +138,10 @@ public class MunchLab {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        /*try{
+            c.
+        }*/
 
         Log.d(TAG, "Added munch: postName = " + c.getPostName());
         mMunches.add(c);

@@ -14,6 +14,7 @@ import android.widget.TimePicker;
 import android.widget.DatePicker;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -241,7 +242,9 @@ public class setETimeActivity extends Activity {
             }
         };
 
-        Volley.newRequestQueue(getApplicationContext()).add(postRequest);
+
+        RequestQueue queue = VolleySingleton.getInstance(this).getRequestQueue();
+        queue.add(postRequest);
 
     }
 

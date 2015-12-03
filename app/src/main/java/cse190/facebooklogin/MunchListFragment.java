@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,6 +20,20 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
+
+import com.crashlytics.android.Crashlytics;
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+import com.facebook.GraphRequest;
+import com.facebook.HttpMethod;
+import com.facebook.GraphResponse;
+import com.facebook.login.widget.ProfilePictureView;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -53,6 +68,7 @@ public class MunchListFragment extends ListFragment {
                         Log.d(TAG, response.toString());
                         try {
                             JSONArray munchPosts = response.getJSONArray("munchlist");
+                            MunchLab.get(getActivity()).reset();
 
                             // Parsing json object response
                             // loop through each json object
@@ -139,6 +155,9 @@ public class MunchListFragment extends ListFragment {
             TextView dateTextView =
                     (TextView)convertView.findViewById(R.id.crime_list_item_dateTextView);
             dateTextView.setText(c.getDate());
+
+            //ProfilePictureView profileImageView = (ProfilePictureView)convertView.findViewById(R.id.imageView2);
+            //profileImageView.setProfileId(c.getMfbId());
             /*CheckBox solvedCheckBox =
                     (CheckBox)convertView.findViewById(R.id.crime_list_item_solvedCheckBox);
             solvedCheckBox.setChecked(c.isSolved());*/

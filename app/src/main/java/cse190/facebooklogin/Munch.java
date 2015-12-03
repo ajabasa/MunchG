@@ -16,6 +16,7 @@ public class Munch {
     private String mEndTime;
     private String mLocation;
     private String mDescription;
+    private String mfbId; // facebook id
     private boolean mSolved;
 
     public Munch() {
@@ -79,6 +80,14 @@ public class Munch {
 
     public UUID getId() {
         return mId;
+    }
+
+    public String getMfbId() {
+        return mfbId;
+    }
+
+    public void setMfbId(String mfbId) {
+        this.mfbId = mfbId;
     }
 }
 
